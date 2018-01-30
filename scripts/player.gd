@@ -20,13 +20,13 @@ func _physics_process(delta):
 	var down = Input.is_action_pressed("ui_down")
 	
 	if left:
-		move_and_slide(Vector2(-moveSpeed, 0.0))
+		move_and_collide(Vector2(-moveSpeed, 0.0))
 	if right:
-		move_and_slide(Vector2(moveSpeed, 0.0))
+		move_and_collide(Vector2(moveSpeed, 0.0))
 	if up:
-		move_and_slide(Vector2(0.0, -moveSpeed))
+		move_and_collide(Vector2(0.0, -moveSpeed))
 	if down:
-		move_and_slide(Vector2(0.0, moveSpeed))
+		move_and_collide(Vector2(0.0, moveSpeed))
 		
 	get_node("/root/Game/Camera").position = self.position
 
